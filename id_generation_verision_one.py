@@ -6,15 +6,20 @@ following format: CITY - DESIGNATION - YEAR THEY JOINED - SERIAL(based on the ye
 
 import xlrd, xlsxwriter
 
+
 loc = ("./memberpractise.xlsx")
+#loc is my input file
 
 workbook = xlsxwriter.Workbook("output.xlsx")
+#this will be my output file
+
 worksheet = workbook.add_worksheet()
 wb = xlrd.open_workbook(loc)
 sheet = wb.sheet_by_index(0)
 
 
 # sheet.cell_value(0,0)
+
 year_serial = []
 eleven = 1
 twelve = 1
@@ -25,17 +30,11 @@ sixteen = 1
 seventeen = 1
 eighteen = 1
 
+#the serial numbers are according to the year they joined the organization, so here i have assigned counters for each year
+
 for i in range(sheet.nrows):
     year_serial.append(sheet.cell_value(i,1))
 
-# a = 0
-# b = 0 
-# c = 0
-# d = 0
-# e = 0
-# f = 0
-# g = 0
-# h = 0
 
 #i know i can make the following process dynamic, i will implement soon as i get some free time
 
